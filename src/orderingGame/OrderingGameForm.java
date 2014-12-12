@@ -73,6 +73,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        splash = new javax.swing.JLabel();
         inOrder = new javax.swing.JButton();
         nextQuestionButton = new javax.swing.JButton();
         newGameButton = new javax.swing.JButton();
@@ -109,6 +110,15 @@ public class OrderingGameForm extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(610, 401));
         setSize(new java.awt.Dimension(660, 401));
         getContentPane().setLayout(null);
+
+        splash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/splash.png"))); // NOI18N
+        splash.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                splashMouseClicked(evt);
+            }
+        });
+        getContentPane().add(splash);
+        splash.setBounds(0, 0, 610, 400);
 
         inOrder.setText("Done!");
         inOrder.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -373,10 +383,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
                newGameButton.setVisible(true);
                goodJobLion.setVisible(true);
                
-           }
-           
-           
-           
+           } 
         }
         else{
            userMessage.setForeground(Color.red);
@@ -408,6 +415,10 @@ public class OrderingGameForm extends javax.swing.JFrame {
     private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
         
     }//GEN-LAST:event_backButtonMouseClicked
+
+    private void splashMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_splashMouseClicked
+        splash.setVisible(false);
+    }//GEN-LAST:event_splashMouseClicked
 
     /**
      * @param args the command line arguments
@@ -513,6 +524,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
     private javax.swing.JLabel rArrow3;
     private javax.swing.JLabel scoreLabel;
     private javax.swing.JLabel scoreNumLabel;
+    private javax.swing.JLabel splash;
     private javax.swing.JLabel userMessage;
     // End of variables declaration//GEN-END:variables
 }
