@@ -25,6 +25,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
         
         nextQuestionButton.setVisible(false);
         newGameButton.setVisible(false);
+        goodJobLion.setVisible(false);
         
         Random gen = new Random();
         int denominatorNumber = gen.nextInt(9)+4;
@@ -105,9 +106,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(610, 401));
         setMinimumSize(new java.awt.Dimension(610, 401));
-        setPreferredSize(new java.awt.Dimension(610, 401));
         setSize(new java.awt.Dimension(660, 401));
         getContentPane().setLayout(null);
 
@@ -148,49 +147,64 @@ public class OrderingGameForm extends javax.swing.JFrame {
         getContentPane().add(userMessage);
         userMessage.setBounds(210, 30, 180, 30);
 
+        scoreLabel.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         scoreLabel.setText("Score :");
         getContentPane().add(scoreLabel);
-        scoreLabel.setBounds(480, 20, 42, 16);
+        scoreLabel.setBounds(442, 20, 80, 26);
 
+        scoreNumLabel.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         scoreNumLabel.setText("0");
         getContentPane().add(scoreNumLabel);
-        scoreNumLabel.setBounds(530, 20, 8, 16);
+        scoreNumLabel.setBounds(530, 20, 40, 30);
 
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/back.png"))); // NOI18N
+        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backButtonMouseClicked(evt);
+            }
+        });
         getContentPane().add(backButton);
         backButton.setBounds(10, 10, 70, 53);
 
+        numerator1.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
         numerator1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(numerator1);
-        numerator1.setBounds(50, 160, 50, 20);
+        numerator1.setBounds(50, 130, 50, 50);
 
+        numerator2.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
         numerator2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(numerator2);
-        numerator2.setBounds(200, 160, 50, 20);
+        numerator2.setBounds(200, 130, 50, 50);
 
+        numerator3.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
         numerator3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(numerator3);
-        numerator3.setBounds(350, 160, 50, 20);
+        numerator3.setBounds(350, 140, 50, 40);
 
+        numerator4.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
         numerator4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(numerator4);
-        numerator4.setBounds(500, 160, 50, 20);
+        numerator4.setBounds(500, 130, 50, 50);
 
+        denominator1.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
         denominator1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(denominator1);
-        denominator1.setBounds(50, 200, 50, 20);
+        denominator1.setBounds(50, 200, 50, 40);
 
+        denominator2.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
         denominator2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(denominator2);
-        denominator2.setBounds(200, 200, 50, 20);
+        denominator2.setBounds(200, 200, 50, 40);
 
+        denominator3.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
         denominator3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(denominator3);
-        denominator3.setBounds(350, 200, 50, 20);
+        denominator3.setBounds(350, 200, 50, 40);
 
+        denominator4.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
         denominator4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(denominator4);
-        denominator4.setBounds(500, 200, 50, 20);
+        denominator4.setBounds(500, 200, 50, 40);
 
         divider1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/divider.png"))); // NOI18N
         getContentPane().add(divider1);
@@ -357,6 +371,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
                userMessage.setText("YOU WIN!");
                nextQuestionButton.setVisible(false);
                newGameButton.setVisible(true);
+               goodJobLion.setVisible(true);
                
            }
            
@@ -389,6 +404,10 @@ public class OrderingGameForm extends javax.swing.JFrame {
         score =0;
         scoreNumLabel.setText(""+score);
     }//GEN-LAST:event_newGameButtonActionPerformed
+
+    private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
+        
+    }//GEN-LAST:event_backButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -428,6 +447,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
     public void reset(){
         
         nextQuestionButton.setVisible(false);
+        goodJobLion.setVisible(false);
         inOrder.setVisible(true);
         userMessage.setText("");
         
