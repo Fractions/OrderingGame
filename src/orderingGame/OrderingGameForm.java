@@ -23,6 +23,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
     public OrderingGameForm() {
         initComponents();
         
+        
         nextQuestionButton.setVisible(false);
         newGameButton.setVisible(false);
         goodJobLion.setVisible(false);
@@ -61,6 +62,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
         numerator3.setText(""+numeratorNumber3);
         numerator4.setText(""+numeratorNumber4);
         
+        splash.requestFocusInWindow();
        
     }
 
@@ -107,6 +109,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Fraction Interaction");
         setMinimumSize(new java.awt.Dimension(610, 401));
         setSize(new java.awt.Dimension(660, 401));
         getContentPane().setLayout(null);
@@ -372,12 +375,12 @@ public class OrderingGameForm extends javax.swing.JFrame {
            userMessage.setVisible(true);
            userMessage.setForeground(Color.green);
            userMessage.setText("Correct!!");
-           score++;
+           score = score + 100;
            scoreNumLabel.setText(""+score);
            inOrder.setVisible(false);
            nextQuestionButton.setVisible(true);
            
-           if(score == 5){
+           if(score == 500){
                userMessage.setText("YOU WIN!");
                nextQuestionButton.setVisible(false);
                newGameButton.setVisible(true);
@@ -408,6 +411,7 @@ public class OrderingGameForm extends javax.swing.JFrame {
 
     private void newGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameButtonActionPerformed
         reset();
+        newGameButton.setVisible(false);
         score =0;
         scoreNumLabel.setText(""+score);
     }//GEN-LAST:event_newGameButtonActionPerformed
